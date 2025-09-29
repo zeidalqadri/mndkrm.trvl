@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:opsz,wght@6..12,400..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 240 10% 98%; /* off-white #FAFAFA */
+    --foreground: 240 10% 3.9%; /* near-black #0A0A0A */
+    --primary: 240 10% 3.9%;
+    --primary-foreground: 240 10% 98%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --border: 240 10% 3.9%; /* near-black for brutalist borders */
+    --ring: 45 100% 51%; /* amber #FFC107 */
+    --card: 240 10% 98%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 240 10% 98%;
+    --popover-foreground: 240 10% 3.9%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 240 10% 3.9%;
+    --accent: 45 100% 51%; /* amber #FFC107 */
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 240 10% 3.9%;
+    --radius: 0px; /* Enforce sharp corners */
+  }
+  .dark {
+    --background: 240 10% 3.9%; /* near-black #0A0A0A */
+    --foreground: 240 10% 98%; /* off-white #FAFAFA */
+    --primary: 240 10% 98%;
+    --primary-foreground: 240 10% 3.9%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --border: 240 10% 98%; /* off-white for brutalist borders */
+    --ring: 45 100% 51%; /* amber #FFC107 */
+    --card: 240 10% 3.9%;
+    --card-foreground: 240 10% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 240 10% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 240 10% 98%;
+    --accent: 45 100% 51%; /* amber #FFC107 */
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 240 10% 98%;
+  }
+  * {
+    @apply border-border;
+    border-radius: 0 !important; /* Global override for brutalist design */
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+    font-family: 'Inter', sans-serif;
+  }
+}
+@layer components {
+  .brutalist-input {
+    @apply w-full bg-transparent text-6xl md:text-8xl font-display font-bold placeholder-foreground/20 border-b-2 border-foreground/20 pb-4 focus:outline-none transition-colors duration-300;
+  }
+  .brutalist-input:focus {
+    @apply border-accent caret-accent;
+  }
+  .brutalist-button {
+    @apply w-full bg-accent text-accent-foreground text-2xl md:text-4xl font-display font-bold p-6 border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-300 ease-in-out transform active:scale-[0.98];
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+  }
+  header, footer, .print-hidden {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #itinerary-content {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  p, ul, div {
+    page-break-inside: avoid;
+  }
+  .print\:break-before-page {
+    page-break-before: always;
+  }
+  .print\:break-inside-avoid {
+    page-break-inside: avoid;
+  }
+  .dark {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 3.9%;
+    --border: 240 10% 3.9%;
+  }
+}
