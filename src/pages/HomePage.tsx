@@ -80,12 +80,11 @@ export function HomePage() {
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <div className="p-8 md:p-16">
-        <header className="fixed top-8 left-8 md:top-16 md:left-16 z-50 print-hidden">
+        <header className="fixed top-8 right-8 md:top-16 md:left-16 z-50 print-hidden">
           <h1
             className="text-2xl font-display font-bold cursor-pointer"
             onClick={status !== 'building' ? reset : undefined}
-          >
-            Mondokroma Canvas
+          
           </h1>
         </header>
         <div className="flex items-center justify-center min-h-[calc(100vh-128px)]">
@@ -97,7 +96,7 @@ export function HomePage() {
           {status === 'building' && <ProgressIndicator />}
         </AnimatePresence>
         <footer className="fixed bottom-8 right-8 md:bottom-16 md:right-16 text-foreground/50 print-hidden">
-          Built with ❤️ at Cloudflare
+          mondokromadotcom
         </footer>
       </div>
     </main>
