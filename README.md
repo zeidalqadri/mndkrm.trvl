@@ -1,6 +1,6 @@
 # Mondokroma Canvas
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/zeidalqadri/mndkrm.trvl)
 
 Mondokroma Canvas is a visually striking, single-page application designed to revolutionize bespoke travel planning. It presents a minimalist, brutalist interface for users to input their core travel desires: destination, timing, and duration. Behind this simple form lies a powerful, orchestrated pipeline on Cloudflare Workers. Upon submission, the application constructs a prompt, enriches it via a context engine, and dispatches it to two leading AI models to generate diverse itinerary drafts. The core innovation is a deterministic reconciliation engine that merges these drafts into a single, coherent, and comprehensive 'mondokroma_itinerary'. This final document is rendered for the user to review, edit inline, and approve, providing a seamless journey from a simple idea to a polished, travel-ready plan.
 
@@ -104,4 +104,4 @@ This project is designed for seamless deployment to Cloudflare Pages.
 
 Alternatively, you can connect your GitHub repository to Cloudflare Pages for automatic deployments on every push.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/zeidalqadri/mndkrm.trvl)
